@@ -3,6 +3,8 @@ MAINTAINER Feng Honglin <hfeng@tutum.co>
 
 RUN yum -y install openssh-server epel-release && \
     yum -y install pwgen && \
+    yum -y install sudo && \
+    yum -y install firewalld firewall-config && \
     rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
